@@ -80,3 +80,13 @@ utile fish =
     fishE = fishS |> turn
   in
     fishN |> over fishW |> over fishS |> over fishE
+
+side : Int -> Picture -> Picture
+side n fish =
+  if n < 1 then blank
+  else
+    let
+      s = side (n - 1) fish
+      t = ttile fish
+    in
+      quartet s s (turn t) t
