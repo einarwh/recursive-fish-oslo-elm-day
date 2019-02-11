@@ -70,3 +70,13 @@ ttile fish =
     fishE = fishN |> turn |> turn |> turn
   in
     fish |> over fishN |> over fishE
+
+utile : Picture -> Picture
+utile fish =
+  let
+    fishN = fish |> toss |> flip
+    fishW = fishN |> turn
+    fishS = fishW |> turn
+    fishE = fishS |> turn
+  in
+    fishN |> over fishW |> over fishS |> over fishE
