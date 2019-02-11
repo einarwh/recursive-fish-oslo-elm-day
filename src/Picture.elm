@@ -48,4 +48,13 @@ quartet : Picture -> Picture -> Picture -> Picture -> Picture
 quartet nw ne sw se =
   above (beside nw ne)
         (beside sw se)
-        
+
+nonet : Picture -> Picture -> Picture -> Picture -> Picture -> Picture -> Picture -> Picture -> Picture -> Picture
+nonet nw nm ne mw mm me sw sm se =
+  let
+    row w m e = besideRatio 1 2 w (beside m e)
+    col n m s = aboveRatio 1 2 n (above m s)
+  in
+    col (row nw nm ne)
+        (row mw mm me)
+        (row sw sm se)
