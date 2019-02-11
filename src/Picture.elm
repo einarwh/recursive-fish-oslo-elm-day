@@ -19,3 +19,15 @@ flip p = flipBox >> p
 
 toss : Picture -> Picture
 toss p = tossBox >> p
+
+aboveRatio : Int -> Int -> Picture -> Picture -> Picture
+aboveRatio m n p1 p2 =
+  \box ->
+    let
+      f = toFloat m / toFloat (m + n)
+      (b1, b2) = splitVertically f box
+    in
+      (p1 b1) ++ (p2 b2)
+
+above : Picture -> Picture -> Picture
+above = aboveRatio 1 1

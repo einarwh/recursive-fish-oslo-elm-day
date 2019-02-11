@@ -21,7 +21,7 @@ main =
           , c = { x = 0.0, y = 300.0 } }
     fish = createPicture fishShapes
   in     
-    box |> toss fish 
+    box |> above fish fish 
         |> toSvgWithBoxes (500, 500) [ ]
         |> placeInsideDiv
  
