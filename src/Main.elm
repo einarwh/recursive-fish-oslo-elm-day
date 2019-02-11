@@ -20,7 +20,6 @@ main =
           , b = { x = 300.0, y = 0.0 }
           , c = { x = 0.0, y = 300.0 } }
     fish = createPicture fishShapes
-    p = turn fish
   in     
     box |> squareLimit 3 fish 
         |> toSvgWithBoxes (500, 500) [ ]
