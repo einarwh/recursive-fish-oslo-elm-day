@@ -90,3 +90,13 @@ side n fish =
       t = ttile fish
     in
       quartet s s (turn t) t
+
+corner : Int -> Picture -> Picture
+corner n fish =
+  if n < 1 then blank
+  else
+    let
+      c = corner (n - 1) fish
+      s = side (n - 1) fish
+    in
+      quartet c s (turn s) (utile fish)
