@@ -43,3 +43,9 @@ besideRatio m n p1 p2 =
 
 beside : Picture -> Picture -> Picture
 beside = besideRatio 1 1
+
+quartet : Picture -> Picture -> Picture -> Picture -> Picture
+quartet nw ne sw se =
+  above (beside nw ne)
+        (beside sw se)
+        
