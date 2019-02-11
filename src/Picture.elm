@@ -16,3 +16,6 @@ turn p = turnBox >> p
 
 flip : Picture -> Picture
 flip p = flipBox >> p
+
+toss : Picture -> Picture
+toss p = tossBox >> p
