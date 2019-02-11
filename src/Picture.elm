@@ -62,4 +62,11 @@ nonet nw nm ne mw mm me sw sm se =
 over : Picture -> Picture -> Picture
 over p1 p2 = 
   \box -> (p1 box) ++ (p2 box)
-  
+
+ttile : Picture -> Picture
+ttile fish =
+  let
+    fishN = fish |> toss |> flip
+    fishE = fishN |> turn |> turn |> turn
+  in
+    fish |> over fishN |> over fishE
