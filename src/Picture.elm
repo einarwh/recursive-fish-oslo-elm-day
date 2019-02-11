@@ -58,3 +58,8 @@ nonet nw nm ne mw mm me sw sm se =
     col (row nw nm ne)
         (row mw mm me)
         (row sw sm se)
+
+over : Picture -> Picture -> Picture
+over p1 p2 = 
+  \box -> (p1 box) ++ (p2 box)
+  
