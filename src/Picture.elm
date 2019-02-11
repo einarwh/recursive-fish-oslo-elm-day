@@ -10,3 +10,6 @@ type alias Picture = Box -> Rendering
 
 blank : Picture 
 blank _ = []
+
+turn : Picture -> Picture
+turn p = turnBox >> p
