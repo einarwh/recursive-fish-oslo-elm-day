@@ -100,3 +100,18 @@ corner n fish =
       s = side (n - 1) fish
     in
       quartet c s (turn s) (utile fish)
+
+squareLimit : Int -> Picture -> Picture
+squareLimit n fish =
+  let
+    mm = utile fish
+    nw = corner n fish
+    sw = nw |> turn
+    se = sw |> turn
+    ne = se |> turn
+    nm = side n fish
+    mw = nm |> turn
+    sm = mw |> turn
+    me = sm |> turn
+  in
+    nonet nw nm ne mw mm me sw sm se
