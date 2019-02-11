@@ -12,4 +12,10 @@ turnBox { a, b, c } =
   { a = add a b
   , b = c
   , c = neg b }
+
+flipBox : Box -> Box
+flipBox { a, b, c } =
+  { a = add a b
+  , b = neg b
+  , c = c }
   
